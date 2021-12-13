@@ -17,7 +17,7 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  children: P.array.isRequired,
+  children: P.node,
   disabled: P.bool,
   onClick: P.func.isRequired,
 };
