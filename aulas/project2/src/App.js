@@ -1,39 +1,76 @@
-import { useReducer } from 'react';
+import { createContext, useContext, useReducer, useRef } from 'react';
 import './App.css';
-// estado inicial
+import P from 'prop-types';
+
+//actions.js
+export const actions = {
+  CHANGE_TITLE: 'CHANGE_TITLE',
+};
+
+// estado inicial data.js
 const globalState = {
   title: 'O título que contexto',
   body: 'O body de contexto',
   counter: 0,
 };
-// função que será acionada quando alterado o state
-const reducer = (state, action) => {
+
+// reducer.js
+
+export const reducer = (state, action) => {
   switch (action.type) {
-    case 'muda':
-      console.log('Chamou muda');
-      return { ...state, title: 'Mudou ' + action.payload };
-    case 'inverter':
-      console.log('Inverter');
-      return { ...state, title: state.title.split('').reverse().join('') };
+    case actions.CHANGE_TITLE: {
+      console.log('Mudar título');
+      return {
+        ...state,
+        title: action.payload,
+      };
+    }
   }
-  // sempre é importante retornar o estado na ação
   return { ...state };
 };
 
-// Usado com estados mais complexos que requerem uma lógica
-function App() {
+// AppContext
+const Context = createContext();
+
+// Provider
+const AppContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, globalState);
-  const { counter, title, body } = state;
+
+  const changeTitle = (payload) => {
+    dispatch({ type: actions.CHANGE_TITLE, payload });
+  };
+
+  return <Context.Provider value={{ state, changeTitle }}>{children}</Context.Provider>;
+};
+
+AppContext.propTypes = {
+  children: P.node,
+};
+
+export const H1 = () => {
+  const context = useContext(Context);
+  const inputRef = useRef();
   return (
-    <div>
-      <h1>
-        {title} {counter}
+    <>
+      <h1
+        onClick={() => {
+          context.changeTitle(inputRef.current.value);
+        }}
+      >
+        {context.state.title}
       </h1>
-      <button onClick={() => dispatch({ type: 'muda', payload: new Date().toLocaleDateString('pt-BR') })}>
-        Click to muda
-      </button>
-      <button onClick={() => dispatch({ type: 'inverter' })}> Click to inverter</button>
-    </div>
+      <input type="text" ref={inputRef} />
+    </>
+  );
+};
+
+function App() {
+  return (
+    <AppContext>
+      <div>
+        <H1></H1>
+      </div>
+    </AppContext>
   );
 }
 
