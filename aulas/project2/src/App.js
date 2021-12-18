@@ -1,35 +1,56 @@
-import React, { useCallback, useState } from 'react';
 import P from 'prop-types';
+import { useEffect, useMemo, useState } from 'react';
 import './App.css';
 
-// Memorizar o component Button no cache
-const Button = React.memo(function Button({ incrementCounter }) {
-  console.log('Filho, renderizou');
-  return <button onClick={() => incrementCounter(10)}>+</button>;
-});
+const Post = ({ post }) => {
+  console.log('filho renderizou');
+  console.log(post);
 
-Button.propTypes = {
-  incrementCounter: P.func,
+  return (
+    <div className="post">
+      <h1>{post.title}</h1>
+      <p>{post.body}</p>
+    </div>
+  );
+};
+
+Post.propTypes = {
+  post: P.shape({
+    id: P.number,
+    title: P.string,
+    body: P.string,
+  }),
 };
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  const [posts, setPosts] = useState([]);
+  const [value, setValue] = useState('');
+  console.log('Pai renderizou!');
 
-  // Utilizar o useCallback para não ter que "recriar" a função toda vez que o component App() for renderizado e sim apenas quando tiver mudança na função
-  const incrementCounter = useCallback((num) => {
-    setCounter((c) => c + num);
+  // Component didMount
+
+  useEffect(() => {
+    setTimeout(function () {
+      fetch('https://jsonplaceholder.typicode.com/posts')
+        .then((r) => r.json())
+        .then((r) => setPosts(r));
+    }, 5000);
   }, []);
-
   return (
-    <div className="App">
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <h1>Contador 1: {counter}</h1>
-      <Button incrementCounter={incrementCounter} />
+    <div className="app">
+      <p>
+        <input type="search" value={value} onChange={(e) => setValue(e.target.value)} />
+      </p>
+      {/* /*memorizar component */}
+      {useMemo(() => {
+        return (
+          posts.length > 0 &&
+          posts.map((post) => {
+            return <Post key={post.id} post={post} />;
+          })
+        );
+      }, [posts])}
+      {posts.length <= 0 && <p>Ainda não existe posts</p>}
     </div>
   );
 }
