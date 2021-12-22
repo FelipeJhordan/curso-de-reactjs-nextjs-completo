@@ -1,39 +1,64 @@
-import React, { useDebugValue, useEffect, useState } from 'react';
-
-const useMediaQuery = (queryValue) => {
-  const [match, setMatch] = useState(false);
-  useDebugValue('Qualquer coisa que eu quiser', (name) => {
-    return name + 'modificado';
-  });
-  useEffect(() => {
-    let isMounted = true;
-    const matchMedia = window.matchMedia(queryValue);
-    const handleChange = () => {
-      if (!isMounted) return;
-      setMatch(Boolean(matchMedia.matches));
-    };
-
-    matchMedia.addEventListener('change', handleChange);
-
-    setMatch(!!matchMedia.matches);
-
-    return () => {
-      isMounted = false;
-      matchMedia.removeEventListener('change', handleChange);
-    };
-  }, [queryValue]);
-
-  return match;
+import { Component, useEffect, useState } from 'react';
+import P from 'prop-types';
+const s = {
+  style: {
+    fontSize: '60px',
+  },
 };
-export default function App() {
-  const huge = useMediaQuery('(min-width:980px)');
-  const big = useMediaQuery('(max-width:979px) and (min-width: 768px)');
-  const medium = useMediaQuery('(max-width:767px) and (min-width: 321px)');
-  const small = useMediaQuery('(max-width:321px)');
-  const background = huge ? 'green' : big ? 'red' : medium ? 'yellow' : small ? 'purple' : 'black';
-  return (
-    <>
-      <h1 style={{ fontSize: '60px', background, display: 'inline' }}>Oi</h1>
-    </>
-  );
+
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Atualiza o state para que a próxima renderização mostre a UI alternativa.
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // Você também pode registrar o erro em um serviço de relatórios de erro
+    console.log(error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // Você pode renderizar qualquer UI alternativa
+      return <h1>Algo deu errado.</h1>;
+    }
+
+    // eslint-disable-next-line react/prop-types
+    return this.props.children;
+  }
 }
+
+const ItWillThrowError = () => {
+  const [counter, setCounter] = useState(0);
+  useEffect(() => {
+    if (counter > 3) {
+      throw new Error('Que chato');
+    }
+  });
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setCounter((s) => s + 1);
+        }}
+      >
+        Click to increase {counter}
+      </button>
+    </div>
+  );
+};
+
+export const Home = () => {
+  return (
+    <p {...s}>
+      <ErrorBoundary>
+        <ItWillThrowError />
+      </ErrorBoundary>
+    </p>
+  );
+};
