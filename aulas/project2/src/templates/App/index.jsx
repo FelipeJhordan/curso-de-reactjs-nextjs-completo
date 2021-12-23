@@ -1,47 +1,22 @@
-import React, { cloneElement, useState } from 'react';
+import React, { Suspense, useState } from 'react';
+// import LazyComponent from './lazy-component';
 
-const s = {
-  style: {
-    fontSize: '60px',
-  },
+const loadComponent = () => {
+  console.log('Component carregando ....');
+  return import('./lazy-component');
 };
-
-const Parent = ({ children }) => {
-  return React.Children.map(children, (child) => {
-    const newChild = cloneElement(child, { ...s });
-    return newChild;
-  });
-};
-
-const TurnOnOff = ({ children }) => {
-  const [isOn, setIsOn] = useState(false);
-  const onTurn = () => setIsOn((s) => !s);
-
-  return React.Children.map(children, (child) => {
-    if (typeof child.type === 'string') return child;
-    const newChild = cloneElement(child, {
-      isOn,
-      onTurn,
-    });
-    return newChild;
-  });
-};
-
-const TurnedOn = ({ isOn, children }) => (isOn ? children : null);
-const TurnedOff = ({ isOn, children }) => (!isOn ? children : null);
-// eslint-disable-next-line react/prop-types
-const TurnButton = ({ isOn, onTurn }) => {
-  return <button onClick={onTurn}>Turn is {isOn ? 'Off' : 'On'}</button>;
-};
+const LazyComponent = React.lazy(loadComponent);
 
 export const Home = () => {
+  const [show, setShow] = useState(false);
   return (
-    <TurnOnOff>
-      <div>
-        <TurnedOn>Aqui as coisas que vão acontecer quando estiver on</TurnedOn>
-        <TurnedOff>Aqui vão as coisa do OFF.</TurnedOff>
-        <TurnButton />
-      </div>
-    </TurnOnOff>
+    <div>
+      <p>
+        <button onMouseOver={loadComponent} onClick={() => setShow((s) => !s)}>
+          Show {show ? 'Lc on screen' : 'Lc not on screen'}
+        </button>
+      </p>
+      <Suspense fallback={<p>Carregando</p>}>{show && <LazyComponent />}</Suspense>
+    </div>
   );
 };
