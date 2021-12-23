@@ -1,22 +1,37 @@
-import React, { Suspense, useState } from 'react';
-// import LazyComponent from './lazy-component';
+import { useEffect } from 'react';
+import { Button } from '../../components/Button';
+import { Heading } from '../../components/Heading';
+import { useCounterContext } from '../../contexts/CounterContext';
 
-const loadComponent = () => {
-  console.log('Component carregando ....');
-  return import('./lazy-component');
-};
-const LazyComponent = React.lazy(loadComponent);
+const Home = () => {
+  const [state, actions] = useCounterContext();
 
-export const Home = () => {
-  const [show, setShow] = useState(false);
+  const handleError = () => {
+    actions
+      .asyncError()
+      .then((r) => console.log(r))
+      .catch((e) => console.log(e.name, ':', e.message));
+  };
   return (
-    <div>
-      <p>
-        <button onMouseOver={loadComponent} onClick={() => setShow((s) => !s)}>
-          Show {show ? 'Lc on screen' : 'Lc not on screen'}
-        </button>
-      </p>
-      <Suspense fallback={<p>Carregando</p>}>{show && <LazyComponent />}</Suspense>
-    </div>
+    <>
+      <div>
+        <Heading />
+        <div>
+          <Button onButtonClick={actions.increase}>Increase</Button>
+          <Button onButtonClick={actions.decrease}>Decrease</Button>
+          <Button onButtonClick={actions.reset}>Reset</Button>
+          <Button onButtonClick={() => actions.setCounter({ counter: 10 })}>Set counter 10</Button>
+          <Button onButtonClick={() => actions.setCounter({ counter: 100 })}>Set counter 100</Button>
+          <Button disabled={state.loading} onButtonClick={actions.asyncIncrease}>
+            async increase
+          </Button>
+          <Button disabled={state.loading} onButtonClick={handleError}>
+            async error
+          </Button>
+        </div>
+      </div>
+    </>
   );
 };
+
+export default Home;
