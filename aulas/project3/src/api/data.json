@@ -1,0 +1,586 @@
+[
+  {
+    "id": 3,
+    "title": "Landing Page",
+    "slug": "landing-page",
+    "createdAt": "2021-12-26T02:30:59.575Z",
+    "updatedAt": "2021-12-31T19:13:37.972Z",
+    "publishedAt": "2021-12-26T02:31:46.458Z",
+    "footer_text": "<p>Feito com <span style=\"color:var(--secondary-color);\">❤</span> por Felipe Jhordan</p>",
+    "locale": "en",
+    "sections": [
+      {
+        "__component": "section.section-two-columns",
+        "id": 2,
+        "title": "January brings us Firefox 85",
+        "description": "To wrap up January, we are proud to bring you the release of Firefox 85. In this version we are bringing you support for the :focus-visible pseudo-class in CSS and associated devtools, and the complete removal of Flash support from Firefox.",
+        "image": {
+          "id": 15,
+          "name": "javascript.svg",
+          "alternativeText": "javascript.svg",
+          "caption": "javascript.svg",
+          "width": 1030,
+          "height": 730,
+          "formats": null,
+          "hash": "javascript_2190de43f1",
+          "ext": ".svg",
+          "mime": "image/svg+xml",
+          "size": 30.31,
+          "url": "https://res.cloudinary.com/felipealves/image/upload/v1640483968/javascript_2190de43f1.svg",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "javascript_2190de43f1",
+            "resource_type": "image"
+          },
+          "createdAt": "2021-12-26T01:54:35.521Z",
+          "updatedAt": "2021-12-26T01:54:35.521Z"
+        },
+        "metadata": {
+          "id": 4,
+          "name": "Home",
+          "section_id": "home",
+          "background": true
+        }
+      },
+      {
+        "__component": "section.section-content",
+        "id": 2,
+        "title": "news converage and some surprises",
+        "content": "<p>The release of Apple Silicon-based Macs at the end of last year generated a flurry of news coverage and some surprises at the machine’s performance. This post details some background information on the experience of porting Firefox to run natively on these CPUs.</p><p>We’ll start with some background on the Mac transition and give an overview of Firefox internals that needed to know about the new architecture, before moving on to the concept of Universal Binaries.</p><p>We’ll then explain how DRM/EME works on the new platform, talk about our experience with macOS Big Sur, and discuss various updater problems we had to deal with. We’ll conclude with the release and an overview of various other improvements that are in the pipeline.</p>",
+        "metadata": {
+          "id": 5,
+          "name": "intro",
+          "section_id": "intro",
+          "background": false
+        }
+      },
+      {
+        "__component": "section.section-grid",
+        "id": 3,
+        "title": "My Grid",
+        "description": "Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio",
+        "metadata": {
+          "id": 8,
+          "name": "grid-one",
+          "section_id": "grid-one",
+          "background": true
+        },
+        "text_grid": [
+          {
+            "id": 4,
+            "title": "Teste 1",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores."
+          },
+          {
+            "id": 5,
+            "title": "Teste 2 ",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores."
+          },
+          {
+            "id": 6,
+            "title": "Teste 3",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores."
+          }
+        ],
+        "image_grid": []
+      },
+      {
+        "__component": "section.section-grid",
+        "id": 5,
+        "title": "Gallery",
+        "description": "Uma galeria com imagens personalizadas",
+        "metadata": {
+          "id": 10,
+          "name": "gallery",
+          "section_id": "gallery",
+          "background": false
+        },
+        "text_grid": [],
+        "image_grid": [
+          {
+            "id": 5,
+            "image": {
+              "id": 18,
+              "name": "photo-1562940444-c9c4bbb048e3.png",
+              "alternativeText": "onibus escolares com prédio de fundo",
+              "caption": "photo-1562940444-c9c4bbb048e3.png",
+              "width": 360,
+              "height": 360,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/felipealves/image/upload/v1640484663/thumbnail_photo_1562940444_c9c4bbb048e3_3a07af2d89.jpg",
+                  "hash": "thumbnail_photo_1562940444_c9c4bbb048e3_3a07af2d89",
+                  "mime": "image/png",
+                  "name": "thumbnail_photo-1562940444-c9c4bbb048e3.png",
+                  "path": null,
+                  "size": 6.05,
+                  "width": 156,
+                  "height": 156,
+                  "provider_metadata": {
+                    "public_id": "thumbnail_photo_1562940444_c9c4bbb048e3_3a07af2d89",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "photo_1562940444_c9c4bbb048e3_3a07af2d89",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 23.46,
+              "url": "https://res.cloudinary.com/felipealves/image/upload/v1640484663/photo_1562940444_c9c4bbb048e3_3a07af2d89.jpg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "photo_1562940444_c9c4bbb048e3_3a07af2d89",
+                "resource_type": "image"
+              },
+              "createdAt": "2021-12-26T02:06:09.436Z",
+              "updatedAt": "2021-12-26T02:06:35.633Z"
+            }
+          },
+          {
+            "id": 4,
+            "image": {
+              "id": 17,
+              "name": "photo-1596918970248-77b4058d498c.png",
+              "alternativeText": "photo-1596918970248-77b4058d498c.png",
+              "caption": "photo-1596918970248-77b4058d498c.png",
+              "width": 360,
+              "height": 360,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/felipealves/image/upload/v1640484611/thumbnail_photo_1596918970248_77b4058d498c_e48fa13d9a.jpg",
+                  "hash": "thumbnail_photo_1596918970248_77b4058d498c_e48fa13d9a",
+                  "mime": "image/png",
+                  "name": "thumbnail_photo-1596918970248-77b4058d498c.png",
+                  "path": null,
+                  "size": 7.12,
+                  "width": 156,
+                  "height": 156,
+                  "provider_metadata": {
+                    "public_id": "thumbnail_photo_1596918970248_77b4058d498c_e48fa13d9a",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "photo_1596918970248_77b4058d498c_e48fa13d9a",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 31.74,
+              "url": "https://res.cloudinary.com/felipealves/image/upload/v1640484610/photo_1596918970248_77b4058d498c_e48fa13d9a.jpg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "photo_1596918970248_77b4058d498c_e48fa13d9a",
+                "resource_type": "image"
+              },
+              "createdAt": "2021-12-26T02:05:16.740Z",
+              "updatedAt": "2021-12-26T02:05:16.740Z"
+            }
+          },
+          {
+            "id": 6,
+            "image": {
+              "id": 19,
+              "name": "rua.png",
+              "alternativeText": "Uma rodovia em uma noite nublada",
+              "caption": "rua.png",
+              "width": 360,
+              "height": 360,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/felipealves/image/upload/v1640484870/thumbnail_rua_4d710bdf4e.jpg",
+                  "hash": "thumbnail_rua_4d710bdf4e",
+                  "mime": "image/png",
+                  "name": "thumbnail_rua.png",
+                  "path": null,
+                  "size": 2.58,
+                  "width": 156,
+                  "height": 156,
+                  "provider_metadata": {
+                    "public_id": "thumbnail_rua_4d710bdf4e",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "rua_4d710bdf4e",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 8.9,
+              "url": "https://res.cloudinary.com/felipealves/image/upload/v1640484869/rua_4d710bdf4e.jpg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "rua_4d710bdf4e",
+                "resource_type": "image"
+              },
+              "createdAt": "2021-12-26T02:09:35.746Z",
+              "updatedAt": "2021-12-26T02:09:52.572Z"
+            }
+          },
+          {
+            "id": 7,
+            "image": {
+              "id": 20,
+              "name": "praia-montanhosa.png",
+              "alternativeText": "praia com montanha de fundo",
+              "caption": "praia-montanhosa.png",
+              "width": 360,
+              "height": 360,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/felipealves/image/upload/v1640484925/thumbnail_praia_montanhosa_7137ce84db.jpg",
+                  "hash": "thumbnail_praia_montanhosa_7137ce84db",
+                  "mime": "image/png",
+                  "name": "thumbnail_praia-montanhosa.png",
+                  "path": null,
+                  "size": 5.59,
+                  "width": 156,
+                  "height": 156,
+                  "provider_metadata": {
+                    "public_id": "thumbnail_praia_montanhosa_7137ce84db",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "praia_montanhosa_7137ce84db",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 22.92,
+              "url": "https://res.cloudinary.com/felipealves/image/upload/v1640484925/praia_montanhosa_7137ce84db.jpg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "praia_montanhosa_7137ce84db",
+                "resource_type": "image"
+              },
+              "createdAt": "2021-12-26T02:10:31.434Z",
+              "updatedAt": "2021-12-26T02:10:53.089Z"
+            }
+          },
+          {
+            "id": 8,
+            "image": {
+              "id": 21,
+              "name": "quenion.png",
+              "alternativeText": "Quenion",
+              "caption": "quenion.png",
+              "width": 360,
+              "height": 360,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/felipealves/image/upload/v1640484984/thumbnail_quenion_7e56d44334.jpg",
+                  "hash": "thumbnail_quenion_7e56d44334",
+                  "mime": "image/png",
+                  "name": "thumbnail_quenion.png",
+                  "path": null,
+                  "size": 5.88,
+                  "width": 156,
+                  "height": 156,
+                  "provider_metadata": {
+                    "public_id": "thumbnail_quenion_7e56d44334",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "quenion_7e56d44334",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 25.24,
+              "url": "https://res.cloudinary.com/felipealves/image/upload/v1640484983/quenion_7e56d44334.jpg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "quenion_7e56d44334",
+                "resource_type": "image"
+              },
+              "createdAt": "2021-12-26T02:11:29.969Z",
+              "updatedAt": "2021-12-26T02:11:40.893Z"
+            }
+          },
+          {
+            "id": 9,
+            "image": {
+              "id": 22,
+              "name": "uma-pilha-de-tijolos.png",
+              "alternativeText": "Pilha de tijolos.",
+              "caption": "uma-pilha-de-tijolos.png",
+              "width": 360,
+              "height": 360,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/felipealves/image/upload/v1640485051/thumbnail_uma_pilha_de_tijolos_9039f38d8f.jpg",
+                  "hash": "thumbnail_uma_pilha_de_tijolos_9039f38d8f",
+                  "mime": "image/png",
+                  "name": "thumbnail_uma-pilha-de-tijolos.png",
+                  "path": null,
+                  "size": 6.3,
+                  "width": 156,
+                  "height": 156,
+                  "provider_metadata": {
+                    "public_id": "thumbnail_uma_pilha_de_tijolos_9039f38d8f",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "uma_pilha_de_tijolos_9039f38d8f",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 29.39,
+              "url": "https://res.cloudinary.com/felipealves/image/upload/v1640485050/uma_pilha_de_tijolos_9039f38d8f.jpg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "uma_pilha_de_tijolos_9039f38d8f",
+                "resource_type": "image"
+              },
+              "createdAt": "2021-12-26T02:12:36.497Z",
+              "updatedAt": "2021-12-26T02:12:51.347Z"
+            }
+          }
+        ]
+      },
+      {
+        "__component": "section.section-grid",
+        "id": 4,
+        "title": "Outra grid",
+        "description": "Atque  nobis laudantium esse ut, non commodi maxime doloribus",
+        "metadata": {
+          "id": 9,
+          "name": "grid-two",
+          "section_id": "grid-two",
+          "background": true
+        },
+        "text_grid": [
+          {
+            "id": 7,
+            "title": "Teste 1",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores."
+          },
+          {
+            "id": 8,
+            "title": "Teste 2",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores."
+          },
+          {
+            "id": 9,
+            "title": "Teste 3",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis cum delectus molestias. Atque doloribus nobis laudantium esse ut, non commodi maxime distinctio veritatis unde, reprehenderit minus ad dolores provident maiores."
+          }
+        ],
+        "image_grid": []
+      },
+      {
+        "__component": "section.section-content",
+        "id": 3,
+        "title": "Pricing",
+        "content": "<p>The release of Apple Silicon-based Macs at the end of last year generated a flurry of news coverage and some surprises at the machine’s performance. This post details some background information on the experience of porting Firefox to run natively on these CPUs.</p><p>&nbsp;</p><p>We’ll start with some background on the Mac transition and give an overview of Firefox internals that needed to know about the new architecture, before moving on to the concept of Universal Binaries.</p><figure class=\"table\"><table><thead><tr><th>Title 1</th><th>Title 2</th><th>Title 3</th><th>Title 4</th><th>Title 5</th></tr></thead><tbody><tr><td>Content 1</td><td>Content 2</td><td>Content 3</td><td>Content 3</td><td>Content 3</td></tr><tr><td>Content 1</td><td>Content 2</td><td>Content 3</td><td>Content 3</td><td>Content 3</td></tr><tr><td>Content 1</td><td>Content 2</td><td>Content 3</td><td>Content 3</td><td>Content 3</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Testando</td></tr></tbody></table></figure>",
+        "metadata": {
+          "id": 6,
+          "name": "pricing",
+          "section_id": "pricing",
+          "background": false
+        }
+      },
+      {
+        "__component": "section.section-two-columns",
+        "id": 3,
+        "title": "January brings us Firefox 85",
+        "description": "To wrap up January, we are proud to bring you the release of Firefox 85. In this version we are bringing you support for the :focus-visible pseudo-class in CSS and associated devtools, and the complete removal of Flash support from Firefox.",
+        "image": {
+          "id": 15,
+          "name": "javascript.svg",
+          "alternativeText": "javascript.svg",
+          "caption": "javascript.svg",
+          "width": 1030,
+          "height": 730,
+          "formats": null,
+          "hash": "javascript_2190de43f1",
+          "ext": ".svg",
+          "mime": "image/svg+xml",
+          "size": 30.31,
+          "url": "https://res.cloudinary.com/felipealves/image/upload/v1640483968/javascript_2190de43f1.svg",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "javascript_2190de43f1",
+            "resource_type": "image"
+          },
+          "createdAt": "2021-12-26T01:54:35.521Z",
+          "updatedAt": "2021-12-26T01:54:35.521Z"
+        },
+        "metadata": {
+          "id": 7,
+          "name": "contact",
+          "section_id": "contact",
+          "background": true
+        }
+      }
+    ],
+    "menu": {
+      "id": 3,
+      "logo_text": "Landing Page",
+      "logo_link": "#",
+      "open_in_new_tab": false,
+      "logo": {
+        "id": 14,
+        "name": "landing-page-2.svg",
+        "alternativeText": "Landing Page Logo",
+        "caption": "Landing Page Logo",
+        "width": 47,
+        "height": 9,
+        "formats": null,
+        "hash": "landing_page_2_c3699f24b2",
+        "ext": ".svg",
+        "mime": "image/svg+xml",
+        "size": 2.51,
+        "url": "https://res.cloudinary.com/felipealves/image/upload/v1640483286/landing_page_2_c3699f24b2.svg",
+        "previewUrl": null,
+        "provider": "cloudinary",
+        "provider_metadata": {
+          "public_id": "landing_page_2_c3699f24b2",
+          "resource_type": "image"
+        },
+        "createdAt": "2021-12-26T01:43:13.042Z",
+        "updatedAt": "2021-12-26T01:49:57.168Z"
+      },
+      "menu": [
+        {
+          "id": 3,
+          "link_text": "intro",
+          "url": "#intro",
+          "open_in_new_tab": false
+        },
+        {
+          "id": 4,
+          "link_text": "grid-one",
+          "url": "#grid-one",
+          "open_in_new_tab": false
+        },
+        {
+          "id": 5,
+          "link_text": "gallery",
+          "url": "#gallery",
+          "open_in_new_tab": false
+        },
+        {
+          "id": 6,
+          "link_text": "grid-two",
+          "url": "#grid-two",
+          "open_in_new_tab": false
+        },
+        {
+          "id": 8,
+          "link_text": "pricing",
+          "url": "#pricing",
+          "open_in_new_tab": false
+        },
+        {
+          "id": 7,
+          "link_text": "contact",
+          "url": "#contact",
+          "open_in_new_tab": false
+        },
+        {
+          "id": 11,
+          "link_text": "Sobre",
+          "url": "/sobre",
+          "open_in_new_tab": true
+        }
+      ]
+    },
+    "localizations": []
+  },
+  {
+    "id": 4,
+    "title": "Sobre mim",
+    "slug": "sobre",
+    "createdAt": "2021-12-31T19:05:38.094Z",
+    "updatedAt": "2021-12-31T20:17:14.610Z",
+    "publishedAt": "2021-12-31T19:11:32.636Z",
+    "footer_text": "<h3 style=\"text-align:center;\">Desenvolvido por felipe🛹</h3>",
+    "locale": "en",
+    "sections": [
+      {
+        "__component": "section.section-content",
+        "id": 4,
+        "title": "Sobre mim",
+        "content": "<p>Sobre mim ? se eu fosse resumir seria: pessoa dedicada, geek, otaku e gamer, atualmente QUASE ( É sério, quase mesmo kkk ) terminando a faculdade, apaixonado por tecnologia, especificamente a parte de programação.</p>",
+        "metadata": {
+          "id": 11,
+          "name": "Resuminho",
+          "section_id": "resumo",
+          "background": false
+        }
+      },
+      {
+        "__component": "section.section-grid",
+        "id": 6,
+        "title": "Objetivos em 2022",
+        "description": "meus objetivos em 2022",
+        "metadata": {
+          "id": 12,
+          "name": "OBJETIVOS",
+          "section_id": "OBJETIVOS",
+          "background": true
+        },
+        "text_grid": [
+          {
+            "id": 13,
+            "title": "Me estabelecer",
+            "description": "Virar um profissional que cumpra com eficiência e com confiança todas as tarefas que me forem dadas."
+          },
+          {
+            "id": 14,
+            "title": "Conhecer a praia",
+            "description": "Um dos males de ser mineiro é que não tem praia, meu sonho é conhecer o mar e ser o rei dos PIRATAS."
+          },
+          {
+            "id": 10,
+            "title": "Evoluir",
+            "description": "Me dedicar ao ponto de subir para pleno \\o\\o"
+          },
+          {
+            "id": 12,
+            "title": "Ser bilingue",
+            "description": "Ser capaz de falar/ler/escrever um inglês de respeito."
+          },
+          {
+            "id": 11,
+            "title": "Ficar fortinho",
+            "description": "Levantar 30 de supino em cada lado !"
+          }
+        ],
+        "image_grid": []
+      }
+    ],
+    "menu": {
+      "id": 4,
+      "logo_text": "Felipe Jhordan",
+      "logo_link": "https://portifolio-felipe-jhordan.herokuapp.com/",
+      "open_in_new_tab": true,
+      "logo": null,
+      "menu": [
+        {
+          "id": 9,
+          "link_text": "Acessar Portifólio",
+          "url": "https://portifolio-felipe-jhordan.herokuapp.com/",
+          "open_in_new_tab": true
+        },
+        {
+          "id": 10,
+          "link_text": "Landing Page",
+          "url": "/",
+          "open_in_new_tab": true
+        }
+      ]
+    },
+    "localizations": []
+  }
+]
