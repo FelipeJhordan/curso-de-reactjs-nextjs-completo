@@ -1,8 +1,17 @@
-import Home from '../templates/App';
+import { useRouter } from 'next/router';
+
 import P from 'prop-types';
+
+import Home from '../templates/App';
 import { loadPages } from '../api/load-pages';
+import { Loading } from '../templates/Loading';
 
 export default function Page({ data }) {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <Loading />;
+  }
+
   return <Home data={data} />;
 }
 
@@ -10,24 +19,22 @@ Page.propTypes = {
   data: P.object,
 };
 
-// com fallback = false, o servidor não vai tentar adivinhar ou aceitar qualquer rota,
-// com fallback = true, o servidor vai "alto criar a pagina com a rota"
-// export const getStaticPaths = async () => {
-//   const paths = (await loadPages()).map((page) => {
-//     return {
-//       params: {
-//         slug: page.slug,
-//       },
-//     };
-//   });
+export const getStaticPaths = async () => {
+  const paths = (await loadPages()).map((page) => {
+    return {
+      params: {
+        slug: page.slug,
+      },
+    };
+  });
 
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
+  return {
+    paths,
+    fallback: true,
+  };
+};
 
-export const getServerSideProps = async (ctx) => {
+export const getStaticProps = async (ctx) => {
   let data = null;
 
   try {
@@ -36,7 +43,7 @@ export const getServerSideProps = async (ctx) => {
     data = null;
   }
 
-  if (!data) {
+  if (!data || data.length === 0) {
     return {
       notFound: true,
     };
@@ -46,5 +53,6 @@ export const getServerSideProps = async (ctx) => {
     props: {
       data,
     },
+    revalidate: 30,
   };
 };

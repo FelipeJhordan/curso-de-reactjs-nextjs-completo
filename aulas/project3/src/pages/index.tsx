@@ -1,13 +1,16 @@
-import Head from 'next/head';
-import P from 'prop-types';
 import Home from '../templates/App';
 import { loadPages } from '../api/load-pages';
+import { GetStaticProps } from 'next';
 
-export default function Index({ data = null }) {
+export type IndexProps = {
+  data: [];
+};
+
+export default function Index({ data = null }: IndexProps) {
   return <Home data={data} />;
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps: GetStaticProps<IndexProps> = async () => {
   let data;
 
   try {
