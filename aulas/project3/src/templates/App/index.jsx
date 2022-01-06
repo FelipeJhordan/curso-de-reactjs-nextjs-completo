@@ -9,6 +9,7 @@ import { GridImage } from '../../components/GridImage';
 import { Base } from '../Base';
 import { PageNotFound } from '../PageNotFound';
 import { configs } from 'eslint-plugin-prettier';
+import { theme } from '../../styles/theme';
 
 function Home({ data }) {
   const { menu, sections, footerHtml, slug, title } = data;
@@ -17,6 +18,12 @@ function Home({ data }) {
     <>
       <Head>
         <title>{title || configs.title}</title>
+
+        <meta name="theme-color" content={theme.colors.primaryColor} />
+        <meta
+          name="description"
+          content="As landing pages mais legais da internet."
+        />
       </Head>
       <Base
         links={links}

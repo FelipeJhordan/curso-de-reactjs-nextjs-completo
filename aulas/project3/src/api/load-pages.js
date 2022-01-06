@@ -19,6 +19,5 @@ export const loadPages = async (slug = '') => {
   const data = !isFindAll
     ? mapData('filled', json)[0] || []
     : mapData('filled', json);
-
   return data;
 };
