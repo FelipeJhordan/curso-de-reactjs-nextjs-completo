@@ -1,10 +1,32 @@
 import Head from 'next/head';
+import P from 'prop-types';
+import Home from '../templates/App';
+import { loadPages } from '../api/load-pages';
 
-import styled from 'styled-components';
-
-const Heading = styled.h1`
-  background: ${({ theme }) => theme.colors.secondaryColor};
-`;
-export default function Home() {
-  return <Heading>Olá</Heading>;
+export default function Index({ data = null }) {
+  return <Home data={data} />;
 }
+
+export const getStaticProps = async () => {
+  let data;
+
+  try {
+    data = await loadPages('landing-page');
+  } catch (e) {
+    //
+  }
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+Index.propTypes = {
+  data: P.array,
+};
