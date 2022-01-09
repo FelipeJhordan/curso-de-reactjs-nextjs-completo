@@ -1,16 +1,12 @@
-import Home from '../templates/App';
+import Home, { HomeProps } from '../templates/App';
 import { loadPages } from '../api/load-pages';
 import { GetStaticProps } from 'next';
 
-export type IndexProps = {
-  data: [];
-};
-
-export default function Index({ data = null }: IndexProps) {
+export default function Index({ data = null }: HomeProps) {
   return <Home data={data} />;
 }
 
-export const getStaticProps: GetStaticProps<IndexProps> = async () => {
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   let data;
 
   try {
@@ -28,8 +24,4 @@ export const getStaticProps: GetStaticProps<IndexProps> = async () => {
       data,
     },
   };
-};
-
-Index.propTypes = {
-  data: P.array,
 };
